@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sriraminbarajan.github.io/BournaConsultantsEngineers-Website/sitemap.xml
+Sitemap: https://www.bournace.com/sitemap.xml

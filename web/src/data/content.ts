@@ -21,7 +21,7 @@ export const firm = {
   officeHours: 'Mon–Sat, 10:00 AM – 6:00 PM IST',
   profilePdf: asset('bourna-profile.pdf'),
   ogImage: asset('og-image.jpg'),
-  siteUrl: 'https://sriraminbarajan.github.io/BournaConsultantsEngineers-Website',
+  siteUrl: 'https://www.bournace.com',
 }
 
 export const principal = {

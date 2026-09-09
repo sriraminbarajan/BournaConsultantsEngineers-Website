@@ -33,7 +33,7 @@ npm run build
 | Stats | **38+** years (from 1988), **13,000+** projects |
 | Office hours | Mon–Sat 10–6 IST (**confirm with dad**) |
 | WhatsApp | empty in `firm.whatsapp` — add `91XXXXXXXXXX` to enable |
-| Domain placeholder | `https://bournace.in` in meta/JSON-LD (change when live) |
+| Domain placeholder | `https://bournace.com` in meta/JSON-LD (change when live) |
 
 ## Current status
 

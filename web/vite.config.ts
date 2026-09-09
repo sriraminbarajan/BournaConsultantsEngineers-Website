@@ -1,12 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-const repoBase = '/BournaConsultantsEngineers-Website/'
-
-// https://vitejs.dev/config/
-export default defineConfig(({ command }) => ({
+// Custom domain https://www.bournace.com serves from site root → base must be `/`
+export default defineConfig({
   plugins: [react()],
-  // Project Pages URL: https://sriraminbarajan.github.io/BournaConsultantsEngineers-Website/
-  // Keep `/` for local `npm run dev`
-  base: command === 'build' ? repoBase : '/',
-}))
+  base: '/',
+})
