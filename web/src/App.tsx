@@ -6,7 +6,6 @@ import { Wordmark } from './components/Wordmark'
 import {
   architectClients,
   builderClients,
-  featuredClients,
   featuredProjects,
   firm,
   heroImages,
@@ -18,10 +17,12 @@ import {
 } from './data/content'
 import './index.css'
 
+type ClientTab = 'Architects' | 'Builders'
+
 function App() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [clientsOpen, setClientsOpen] = useState(false)
+  const [clientTab, setClientTab] = useState<ClientTab>('Architects')
   const [workFilter, setWorkFilter] = useState<(typeof workFilters)[number]>('All')
   const [lightbox, setLightbox] = useState<ProjectItem | null>(null)
   const [heroIndex, setHeroIndex] = useState(0)
@@ -319,47 +320,38 @@ function App() {
             <p className="section-label">Clients</p>
             <h2 className="section-title">Trusted by architects and builders.</h2>
             <p className="section-lead">
-              A curated set of long-standing relationships. Full lists available on request.
+              Practices and promoters Bourna has worked with over the years.
             </p>
 
-            <div className="clients-block" style={{ marginTop: '2.5rem' }}>
-              <h3>Featured</h3>
-              <ul className="client-cloud client-cloud-featured">
-                {featuredClients.map((name) => (
-                  <li key={name}>{name}</li>
-                ))}
-              </ul>
+            <div
+              className="work-filters"
+              style={{ marginTop: '2.5rem' }}
+              role="tablist"
+              aria-label="Client type"
+            >
+              {(['Architects', 'Builders'] as const).map((tab) => (
+                <button
+                  key={tab}
+                  type="button"
+                  role="tab"
+                  aria-selected={clientTab === tab}
+                  className={['filter-chip', clientTab === tab ? 'is-active' : ''].join(' ')}
+                  onClick={() => setClientTab(tab)}
+                >
+                  {tab === 'Builders' ? 'Builders & promoters' : tab}
+                </button>
+              ))}
             </div>
 
-            <button
-              type="button"
-              className="clients-toggle"
-              aria-expanded={clientsOpen}
-              onClick={() => setClientsOpen((v) => !v)}
-            >
-              {clientsOpen ? 'Hide full lists' : 'See all architects & builders'}
-            </button>
-
-            {clientsOpen && (
-              <>
-                <div className="clients-block">
-                  <h3>Architects</h3>
-                  <ul className="client-cloud">
-                    {architectClients.map((name) => (
-                      <li key={name}>{name}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="clients-block">
-                  <h3>Builders &amp; promoters</h3>
-                  <ul className="client-cloud">
-                    {builderClients.map((name) => (
-                      <li key={name}>{name}</li>
-                    ))}
-                  </ul>
-                </div>
-              </>
-            )}
+            <div className="clients-block" role="tabpanel">
+              <ul className="client-cloud">
+                {(clientTab === 'Architects' ? architectClients : builderClients).map(
+                  (name) => (
+                    <li key={name}>{name}</li>
+                  ),
+                )}
+              </ul>
+            </div>
           </div>
         </section>
 

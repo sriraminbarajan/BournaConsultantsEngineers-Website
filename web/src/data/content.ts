@@ -1,3 +1,5 @@
+import { asset } from '../lib/asset'
+
 export const firm = {
   name: 'Bourna Consultants Engineers',
   shortName: 'Bourna',
@@ -17,16 +19,16 @@ export const firm = {
   address: '50, Kirupasankari St, West Mambalam, Chennai 600 033',
   mapsQuery: '50 Kirupasankari Street West Mambalam Chennai 600033',
   officeHours: 'Mon–Sat, 10:00 AM – 6:00 PM IST',
-  profilePdf: '/bourna-profile.pdf',
-  ogImage: '/og-image.jpg',
-  siteUrl: 'https://bournace.in',
+  profilePdf: asset('bourna-profile.pdf'),
+  ogImage: asset('og-image.jpg'),
+  siteUrl: 'https://sriraminbarajan.github.io/BournaConsultantsEngineers-Website',
 }
 
 export const principal = {
   name: 'S.P.S. Inbarajan',
   title: 'Chief Consultant',
   credentials: 'M.E. (Structural Engg.), Annamalai University',
-  photo: '/profile-2026.jpg',
+  photo: asset('profile-2026.jpg'),
   signatureLine: 'Every structural drawing carries his signature.',
   bio: [
     'Practicing independently as a structural consultant since 1988 for architects, flat promoters, and builders. Bourna Consultants Engineers was established in 1992.',
@@ -87,9 +89,9 @@ export const services = [
 ]
 
 export const heroImages = [
-  '/hero/hero-1.webp',
-  '/hero/hero-2.webp',
-  '/hero/hero-3.webp',
+  asset('hero/hero-1.webp'),
+  asset('hero/hero-2.webp'),
+  asset('hero/hero-3.webp'),
 ]
 
 /** Featured projects — images in /public/projects/ */
@@ -100,7 +102,7 @@ export const featuredProjects = [
     location: 'Koyambedu, Chennai',
     type: 'Cinema',
     detail: 'Six-in-one multiplex',
-    images: ['/projects/rohini-movie-park.webp'],
+    images: [asset('projects/rohini-movie-park.webp')],
   },
   {
     id: 'visteria-bloom',
@@ -109,10 +111,10 @@ export const featuredProjects = [
     type: 'Residential',
     detail: 'Apartment development',
     images: [
-      '/projects/visteria-street-view.webp',
-      '/projects/visteria-entrance-arch.webp',
-      '/projects/visteria-block-c.webp',
-      '/projects/visteria-club-house.webp',
+      asset('projects/visteria-street-view.webp'),
+      asset('projects/visteria-entrance-arch.webp'),
+      asset('projects/visteria-block-c.webp'),
+      asset('projects/visteria-club-house.webp'),
     ],
   },
   {
@@ -121,7 +123,7 @@ export const featuredProjects = [
     location: 'Taylors Road, Chennai',
     type: 'Residential',
     detail: 'Allied Majestic · B + G + 9',
-    images: ['/projects/millennium-tower.webp'],
+    images: [asset('projects/millennium-tower.webp')],
   },
   {
     id: 'green-valley-teynampet',
@@ -129,7 +131,7 @@ export const featuredProjects = [
     location: 'Teynampet, Chennai',
     type: 'IT / Commercial',
     detail: '1,30,000 sq.ft · 2B + G + 4',
-    images: ['/projects/green-valley-teynampet.webp'],
+    images: [asset('projects/green-valley-teynampet.webp')],
   },
   {
     id: 'akshaya-36',
@@ -137,7 +139,7 @@ export const featuredProjects = [
     location: 'P.H. Road, Chennai',
     type: 'Residential',
     detail: '3.75 lakh sq.ft · Stilt + 10',
-    images: ['/projects/akshaya-36-carat.webp'],
+    images: [asset('projects/akshaya-36-carat.webp')],
   },
   {
     id: 'green-rajaguru',
@@ -145,7 +147,7 @@ export const featuredProjects = [
     location: 'Madambakkam, Chennai',
     type: 'Residential',
     detail: 'Green Valleys Shelters · Stilt + 14',
-    images: ['/projects/green-rajaguru.webp'],
+    images: [asset('projects/green-rajaguru.webp')],
   },
   {
     id: 'ags-cinema',
@@ -153,7 +155,7 @@ export const featuredProjects = [
     location: 'T. Nagar, Chennai',
     type: 'Cinema',
     detail: 'Four screens · Ten levels',
-    images: ['/projects/ags-cinema.webp'],
+    images: [asset('projects/ags-cinema.webp')],
   },
   {
     id: 'blue-jewel',
@@ -161,7 +163,7 @@ export const featuredProjects = [
     location: 'Muttukadu, Chennai',
     type: 'Residential',
     detail: 'Rajparis · 1,86,196 sq.ft · B + Stilt + 15',
-    images: ['/projects/blue-jewel.webp'],
+    images: [asset('projects/blue-jewel.webp')],
   },
   {
     id: 'madha-medical',
@@ -169,7 +171,7 @@ export const featuredProjects = [
     location: 'Chennai',
     type: 'Institutional',
     detail: 'Lourdhiammal Education Trust · G + 5',
-    images: ['/projects/madha-medical.webp'],
+    images: [asset('projects/madha-medical.webp')],
   },
   {
     id: 'kamaraj-college',
@@ -177,7 +179,7 @@ export const featuredProjects = [
     location: 'Virudhunagar',
     type: 'Institutional',
     detail: 'Campus buildings',
-    images: ['/projects/kamaraj-college.webp'],
+    images: [asset('projects/kamaraj-college.webp')],
   },
   {
     id: 'passergad-bungalows',
@@ -186,27 +188,11 @@ export const featuredProjects = [
     type: 'Residential',
     detail: 'Private bungalows and beach house',
     images: [
-      '/projects/passergad-1.webp',
-      '/projects/passergad-2.webp',
-      '/projects/passergad-3.webp',
+      asset('projects/passergad-1.webp'),
+      asset('projects/passergad-2.webp'),
+      asset('projects/passergad-3.webp'),
     ],
   },
-]
-
-/** Featured relationships — curated, not the full PDF dump */
-export const featuredClients = [
-  'Rajparis Civil Constructions',
-  'DABC',
-  'Green Valleys Shelters',
-  'Akshaya Homes',
-  'AGS Cinemas',
-  'The Chennai Silks',
-  'PS Srijan',
-  'Real Value Promoters',
-  'Sterling Estates',
-  'B & B Builders',
-  'Salma Constructions',
-  'Passargad Architecture',
 ]
 
 export const architectClients = [
@@ -301,6 +287,7 @@ export const builderClients = [
   'Wilson Builders',
   'SB Properties',
   'Sandeep Builders',
+  'Saamy Developers',
   'Niropa Properties',
   'Vijaya Constructions',
 ]

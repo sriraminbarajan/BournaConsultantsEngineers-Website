@@ -44,7 +44,7 @@ npm run build
 | Real logo vector | Blocked |
 | WhatsApp | Needs mobile number |
 | Drawing↔building slider | Needs CAD drawings |
-| Domain / hosting | Not started |
+| Domain / hosting | GitHub Pages configured — enable in repo Settings after push |
 
 ## Session log
 
@@ -53,3 +53,4 @@ npm run build
 | 2026-09-09 | Initial build + gallery + Passargad + count-up |
 | 2026-09-09 | REVIEW.md critique written |
 | 2026-09-09 | Implemented review priorities: SEO/OG/JSON-LD, image optimize, hero photos, timeline, filters, lightbox, signature callout, curated clients, PDF download, a11y, scroll progress. |
+| 2026-09-09 | Added GitHub Pages deploy workflow + Vite base path for project site. |
