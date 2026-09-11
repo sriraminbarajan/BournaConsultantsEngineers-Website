@@ -193,7 +193,7 @@ function App() {
             </div>
             <div className="stat">
               <strong>Chennai</strong>
-              <span className="stat-label">Based · work across India</span>
+              <span className="stat-label">Based in Chennai, work across India</span>
             </div>
           </div>
         </section>

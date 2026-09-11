@@ -10,8 +10,8 @@ export function Wordmark({
   className = '',
   title = 'Bourna Consultants Engineers',
 }: WordmarkProps) {
-  const ink = variant === 'light' ? '#fafbfa' : '#2e322f'
-  const bar = variant === 'light' ? '#9fbfb0' : '#1a3f32'
+  const ink = variant === 'light' ? '#f7f6f3' : '#1c1f1d'
+  const bar = variant === 'light' ? '#a8c4b6' : '#1a3f32'
 
   return (
     <svg
@@ -26,10 +26,10 @@ export function Wordmark({
         x="0"
         y="68"
         fill={ink}
-        fontFamily="Syne, Arial Black, Helvetica Neue, sans-serif"
-        fontWeight="800"
+        fontFamily="Archivo, Helvetica Neue, sans-serif"
+        fontWeight="700"
         fontSize="68"
-        letterSpacing="0.03em"
+        letterSpacing="0.02em"
       >
         BOURNA
       </text>
@@ -37,10 +37,10 @@ export function Wordmark({
         x="2"
         y="104"
         fill={ink}
-        fontFamily="Syne, Helvetica Neue, sans-serif"
-        fontWeight="700"
+        fontFamily="Archivo, Helvetica Neue, sans-serif"
+        fontWeight="600"
         fontSize="22"
-        letterSpacing="0.12em"
+        letterSpacing="0.08em"
       >
         CONSULTANTS-ENGINEERS
       </text>
