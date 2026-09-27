@@ -341,12 +341,11 @@ export const openings = [
   },
 ]
 
-export function gmailComposeUrl(to: string, subject: string) {
+/** Opens the phone or computer's default mail app with the draft filled in. */
+export function applyMailUrl(to: string, subject: string) {
   const params = new URLSearchParams({
-    view: 'cm',
-    fs: '1',
-    to,
-    su: subject,
+    subject,
+    body: 'I am applying for the AutoCAD drafting role.\n\nPlease find my CV attached.',
   })
-  return `https://mail.google.com/mail/?${params.toString()}`
+  return `mailto:${to}?${params.toString().replace(/\+/g, '%20')}`
 }

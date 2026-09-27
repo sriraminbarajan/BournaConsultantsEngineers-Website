@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { firm, gmailComposeUrl, openings } from '../data/content'
+import { applyMailUrl, firm, openings } from '../data/content'
 
 export function Careers() {
   useEffect(() => {
@@ -20,17 +20,12 @@ export function Careers() {
         </p>
 
         {openings.map((job) => {
-          const applyUrl = gmailComposeUrl(job.applyEmail, job.subject)
+          const applyUrl = applyMailUrl(job.applyEmail, job.subject)
           return (
             <article className="job-sheet" key={job.id} id={job.id}>
               <header className="job-head">
                 <h2>{job.title}</h2>
-                <a
-                  className="btn btn-solid"
-                  href={applyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a className="btn btn-solid" href={applyUrl}>
                   Apply now
                 </a>
               </header>
@@ -83,17 +78,12 @@ export function Careers() {
               </ul>
 
               <div className="job-apply">
-                <a
-                  className="btn btn-solid"
-                  href={applyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a className="btn btn-solid" href={applyUrl}>
                   Apply now
                 </a>
                 <p>
-                  Opens Gmail to {job.applyEmail} with the subject already filled in. Attach your CV
-                  before sending.
+                  Opens your email app to {job.applyEmail} with the subject filled in. Attach your
+                  CV before sending.
                 </p>
               </div>
 
