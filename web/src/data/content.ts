@@ -306,5 +306,47 @@ export const nav = [
   { label: 'Services', href: '#services' },
   { label: 'Work', href: '#work' },
   { label: 'Clients', href: '#clients' },
+  { label: 'Careers', href: '/careers' },
   { label: 'Contact', href: '#contact' },
 ]
+
+export const openings = [
+  {
+    id: 'autocad-drafting',
+    title: 'AutoCAD drafting',
+    location: 'West Mambalam, Chennai',
+    workplace: 'On-site',
+    eligibility: 'B.E. Civil (fresher)',
+    skills: 'AutoCAD',
+    joining: 'Immediate joining preferred',
+    subject: 'RE: Application for AutoCAD drafting',
+    applyEmail: 'spsinbarajan@gmail.com',
+    summary:
+      'Bourna Consultants Engineers is looking for a fresher to join the CAD drafting team at the West Mambalam office. You will prepare structural drawings in AutoCAD under the Chief Consultant, for residential, commercial, and other building projects.',
+    duties: [
+      'Draft structural drawings in AutoCAD from sketches and marked-up drawings.',
+      'Set out plans, sections, and details clearly enough for construction.',
+      'Revise drawings from review comments and keep files organised.',
+    ],
+    requirements: [
+      'B.E. Civil (fresher).',
+      'Working knowledge of AutoCAD.',
+      'Ability to read structural sketches and produce neat, accurate drawings.',
+      'Immediate joining preferred.',
+    ],
+    offer: [
+      'A healthy work-life balance.',
+      'Exposure to work on projects by leading builders and architects across Tamil Nadu.',
+    ],
+  },
+]
+
+export function gmailComposeUrl(to: string, subject: string) {
+  const params = new URLSearchParams({
+    view: 'cm',
+    fs: '1',
+    to,
+    su: subject,
+  })
+  return `https://mail.google.com/mail/?${params.toString()}`
+}

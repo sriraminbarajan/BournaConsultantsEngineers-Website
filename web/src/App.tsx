@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { CountUp } from './components/CountUp'
 import { ProjectCard, type ProjectItem } from './components/ProjectCard'
 import { ProjectLightbox } from './components/ProjectLightbox'
+import { Careers } from './components/Careers'
 import { Wordmark } from './components/Wordmark'
 import {
   architectClients,
@@ -79,6 +80,10 @@ function App() {
       ? featuredProjects
       : featuredProjects.filter((p) => p.type === workFilter)
 
+  const onCareers = window.location.pathname.replace(/\/$/, '') === '/careers'
+  const sectionHref = (href: string) =>
+    href.startsWith('#') && onCareers ? `/${href}` : href
+
   return (
     <>
       <div
@@ -91,8 +96,8 @@ function App() {
         ref={headerRef}
         className={[
           'site-header',
-          'is-hero-light',
-          scrolled ? 'is-scrolled' : '',
+          onCareers ? '' : 'is-hero-light',
+          onCareers || scrolled ? 'is-scrolled' : '',
           menuOpen ? 'is-menu-open' : '',
         ]
           .filter(Boolean)
@@ -100,11 +105,11 @@ function App() {
       >
         <div className="header-inner">
           <a
-            className={['logo-link', scrolled ? 'is-visible' : 'is-hidden'].join(' ')}
-            href="#top"
+            className={['logo-link', onCareers || scrolled ? 'is-visible' : 'is-hidden'].join(' ')}
+            href={onCareers ? '/' : '#top'}
             aria-label={firm.name}
-            aria-hidden={!scrolled}
-            tabIndex={scrolled ? 0 : -1}
+            aria-hidden={!onCareers && !scrolled}
+            tabIndex={onCareers || scrolled ? 0 : -1}
           >
             <Wordmark variant="dark" className="logo-mark" />
           </a>
@@ -119,11 +124,16 @@ function App() {
           </button>
           <nav className={menuOpen ? 'nav is-open' : 'nav'} aria-label="Primary">
             {nav.map((item) => (
-              <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
+              <a
+                key={item.href}
+                href={sectionHref(item.href)}
+                aria-current={item.href === '/careers' && onCareers ? 'page' : undefined}
+                onClick={() => setMenuOpen(false)}
+              >
                 {item.label}
               </a>
             ))}
-            <a className="nav-cta" href="#contact" onClick={() => setMenuOpen(false)}>
+            <a className="nav-cta" href={sectionHref('#contact')} onClick={() => setMenuOpen(false)}>
               Get in touch
             </a>
           </nav>
@@ -140,6 +150,10 @@ function App() {
       )}
 
       <main id="top">
+        {onCareers ? (
+          <Careers />
+        ) : (
+          <>
         <section className="hero" aria-label="Introduction">
           <div className="hero-slides" aria-hidden="true">
             {heroImages.map((src, i) => (
@@ -417,6 +431,8 @@ function App() {
             </div>
           </div>
         </section>
+          </>
+        )}
       </main>
 
       <footer className="site-footer">
@@ -425,6 +441,7 @@ function App() {
             <strong>{firm.name}</strong>
           </span>
           <span>© {new Date().getFullYear()} · Structural consultancy, Chennai</span>
+          <a href="/careers">Careers</a>
         </div>
       </footer>
 
